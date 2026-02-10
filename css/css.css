@@ -173,3 +173,9 @@ input:focus,button:focus
 	cursor:pointer;
 	text-decoration:none;
 }
+
+
+.text-123{
+	font-family: 'Noto Sans TC';
+	color:#0CF;
+}

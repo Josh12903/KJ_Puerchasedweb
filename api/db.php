@@ -22,7 +22,7 @@ session_start();
 class DB {
     // 資料庫連線設定 / Database connection settings
     // 請根據您的環境修改 / Modify according to your environment
-    private $dsn = "mysql:host=localhost;dbname=db260111;charset=utf8mb4";
+    private $dsn = "mysql:host=localhost;dbname=aidb;charset=utf8mb4";
     private $username = 'root';  // 資料庫帳號 / DB username
     private $password = '';      // 資料庫密碼 / DB password
     private $table;
@@ -207,7 +207,7 @@ class DB {
  * @return array 查詢結果 / Query results
  */
 function q($sql) {
-    $dsn = "mysql:host=localhost;dbname=db260111;charset=utf8mb4";
+    $dsn = "mysql:host=localhost;dbname=aidb;charset=utf8mb4";
     $pdo = new PDO($dsn, 'root', '');
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }

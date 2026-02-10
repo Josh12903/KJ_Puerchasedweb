@@ -116,7 +116,7 @@ $bottom = $Bottom->find(1);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO 優化 / SEO Optimization -->
-    <title><?= $title['text'] ?? '現代電商網站' ?> | 代購專門店</title>
+    <title>Lily's shop</title>
     <meta name="description" content="熱門ACG周邊、日用美妝、健康保健食品代購網站">
     
     <!-- =====================================================
@@ -128,6 +128,7 @@ $bottom = $Bottom->find(1);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/css.css">
     
     <!-- =====================================================
     Tailwind CSS v4 CDN
@@ -147,10 +148,10 @@ $bottom = $Bottom->find(1);
                     },
                     // 自訂顏色 / Custom colors - 可自行修改 / Customizable
                     colors: {
-                        'primary': '#6366f1',      // 主色調 / Primary color
-                        'secondary': '#8b5cf6',    // 次要色 / Secondary color
-                        'accent': '#f59e0b',       // 強調色 / Accent color
-                        'dark': '#1e1b4b',         // 深色背景 / Dark background
+                        'primary': '#34b35a',      // 主色調 / Primary color
+                        'secondary': '#c2d68c',    // 次要色 / Secondary color
+                        'accent': '#ffbe4f',       // 強調色 / Accent color
+                        'dark': '#3028a0',         // 深色背景 / Dark background
                     }
                 }
             }
@@ -180,7 +181,7 @@ $bottom = $Bottom->find(1);
             box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
         }
         .category-btn.active {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background: linear-gradient(135deg, #3134d1, #5cf671);
             color: white;
             transform: scale(1.05);
         }
@@ -196,7 +197,7 @@ $bottom = $Bottom->find(1);
         
         /* 漸層背景 / Gradient backgrounds */
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3551cf 0%, #5ca24b 100%);
         }
         
         /* 玻璃效果 / Glassmorphism effect */
@@ -254,8 +255,9 @@ $bottom = $Bottom->find(1);
                     <!-- 如果有 logo 圖片，取消註解以下行 / Uncomment below if you have logo image -->
                     <!-- <img src="./pic/logo.png" alt="Logo" class="h-10 w-auto"> -->
                     <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                        <?= $title['text'] ?? '代購專門店' ?>
+                        莉莉代購 | 
                     </span>
+                    <span class="font-bold" style="color:orange"> Lily's shop</span>
                 </a>
                 
                 <!-- 桌面版導航 / Desktop Navigation -->
@@ -356,7 +358,7 @@ $bottom = $Bottom->find(1);
                     精選代購商品
                 </h1>
                 <!-- 副標題 / Subtitle - 可自訂 / Customizable -->
-                <p class="text-xl md:text-2xl mb-8 text-white/90">
+                <p class="md:text-2xl mb-8 text-123" style="color:#0DF;font-family:'Inter', 'Noto Sans TC', sans-serif">
                     熱門ACG周邊 · 日用美妝 · 健康保健
                 </p>
                 
@@ -843,7 +845,7 @@ $bottom = $Bottom->find(1);
                 <div>
                     <h3 class="text-xl font-bold mb-4">關於我們</h3>
                     <p class="text-gray-400">
-                        專業代購服務，提供最優質的商品與服務。
+                        頻繁往返日韓，當季代購服務，提供客製窗口服務。
                     </p>
                 </div>
                 

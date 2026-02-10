@@ -70,7 +70,7 @@ $title = $Title->find(['sh' => 1]);
         body { font-family: 'Noto Sans TC', sans-serif; }
         .sidebar-link { transition: all 0.2s ease; }
         .sidebar-link:hover, .sidebar-link.active {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background: linear-gradient(135deg, #c6d886, #8b5cf6);
             color: white;
         }
     </style>
@@ -84,11 +84,11 @@ $title = $Title->find(['sh' => 1]);
         <!-- =====================================================
         側邊選單 / Sidebar Menu
         ===================================================== -->
-        <aside class="fixed left-0 top-0 h-full w-64 bg-dark text-white shadow-xl z-50">
+        <aside class="fixed left-0 top-0 h-full w-64 bg-dark text-white shadow-xl z-50" style="background:#ffe">
             <!-- Logo -->
             <div class="p-6 border-b border-gray-700">
-                <a href="index.php" class="text-xl font-bold text-white hover:text-primary transition">
-                    <?= $title['text'] ?? '後台管理' ?>
+                <a href="index.php" class="text-xl font-bold text-white hover:text-primary transition"style="color:#0AE">
+                    首頁
                 </a>
                 <p class="text-gray-400 text-sm mt-1">Admin Panel</p>
             </div>
@@ -96,17 +96,17 @@ $title = $Title->find(['sh' => 1]);
             <!-- 導航連結 / Navigation Links -->
             <nav class="p-4 space-y-2">
                 <!-- 商品管理 / Product Management -->
-                <a href="?do=products" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'products' ? 'active' : '' ?>">
+                <a href="?do=products" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'products' ? 'active' : '' ?>" style="color:black">
                     📦 商品管理
                 </a>
                 
                 <!-- 類別管理 / Category Management -->
-                <a href="?do=categories" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'categories' ? 'active' : '' ?>">
+                <a href="?do=categories" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'categories' ? 'active' : '' ?>" style="color:black">
                     📁 類別管理
                 </a>
                 
                 <!-- 訂單管理 / Order Management -->
-                <a href="?do=orders" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'orders' ? 'active' : '' ?>">
+                <a href="?do=orders" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'orders' ? 'active' : '' ?>" style="color:black">
                     🧾 訂單管理
                 </a>
                 
@@ -115,19 +115,19 @@ $title = $Title->find(['sh' => 1]);
                 <!-- 原有功能 / Legacy Features -->
                 <p class="text-gray-500 text-xs uppercase tracking-wider px-4 mb-2">原有功能</p>
                 
-                <a href="?do=title" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'title' ? 'active' : '' ?>">
+                <a href="?do=title" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'title' ? 'active' : '' ?>" style="color:black">
                     🏷️ 網站標題管理
                 </a>
                 
-                <a href="?do=ad" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'ad' ? 'active' : '' ?>">
+                <a href="?do=ad" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'ad' ? 'active' : '' ?>" style="color:black">
                     📢 動態文字廣告
                 </a>
                 
-                <a href="?do=news" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'news' ? 'active' : '' ?>">
+                <a href="?do=news" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'news' ? 'active' : '' ?>" style="color:black">
                     📰 最新消息管理
                 </a>
                 
-                <a href="?do=admin" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'admin' ? 'active' : '' ?>">
+                <a href="?do=admin" class="sidebar-link block px-4 py-3 rounded-lg <?= $do === 'admin' ? 'active' : '' ?>" style="color:black">
                     👤 管理員帳號
                 </a>
             </nav>
@@ -159,21 +159,21 @@ $title = $Title->find(['sh' => 1]);
             <div class="mb-8 flex items-center justify-between">
                 <h1 class="text-3xl font-bold text-gray-800">📦 商品管理</h1>
                 <button onclick="openModal('add-product')" 
-                        class="px-6 py-3 bg-primary text-white rounded-xl font-medium hover:bg-secondary transition">
+                        class="px-6 py-3 text-white rounded-xl font-medium hover:bg-secondary transition" style="background:orange">
                     + 新增商品
                 </button>
             </div>
             
             <?php 
             // 取得所有類別 / Get all categories
-            $allCategories = $Category->all([], ' ORDER BY sort_order ASC');
+            $allCategories = $Category->all(' ORDER BY sort_order ASC');
             
             // 按類別顯示商品 / Display products by category
             foreach ($allCategories as $cat):
                 $catProducts = $Product->all(['category_id' => $cat['id']], ' ORDER BY sort_order ASC');
             ?>
             <div class="bg-white rounded-2xl shadow-md mb-8 overflow-hidden">
-                <div class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 flex items-center justify-between">
+                <div class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 flex items-center justify-between" style="background: #0e4dd3">
                     <h2 class="text-xl font-bold"><?= $cat['icon'] ?> <?= $cat['name'] ?></h2>
                     <span class="bg-white/20 px-3 py-1 rounded-full text-sm">
                         <?= count($catProducts) ?> 件商品
@@ -309,7 +309,7 @@ $title = $Title->find(['sh' => 1]);
                                 取消
                             </button>
                             <button type="submit"
-                                    class="flex-1 py-3 bg-primary text-white rounded-xl font-medium hover:bg-secondary transition">
+                                    class="flex-1 py-3 text-white rounded-xl font-medium hover:bg-secondary transition" style="background: #53e9b0">
                                 儲存
                             </button>
                         </div>
@@ -343,7 +343,7 @@ $title = $Title->find(['sh' => 1]);
                             </thead>
                             <tbody>
                                 <?php 
-                                $allCats = $Category->all([], ' ORDER BY sort_order ASC');
+                                $allCats = $Category->all(' ORDER BY sort_order ASC');
                                 foreach ($allCats as $cat): 
                                 ?>
                                 <tr class="border-b">
@@ -379,7 +379,7 @@ $title = $Title->find(['sh' => 1]);
                         </table>
                         
                         <div class="mt-6 flex justify-end">
-                            <button type="submit" class="px-8 py-3 bg-primary text-white rounded-xl font-medium hover:bg-secondary transition">
+                            <button type="submit" class="px-8 py-3 bg-primary text-white rounded-xl font-medium hover:bg-secondary transition" style="background: rgb(71 72 108)">
                                 儲存變更
                             </button>
                         </div>
@@ -398,7 +398,7 @@ $title = $Title->find(['sh' => 1]);
             </div>
             
             <?php 
-            $orders = $Order->all([], ' ORDER BY created_at DESC');
+            $orders = $Order->all(' ORDER BY created_at DESC');
             ?>
             
             <div class="bg-white rounded-2xl shadow-md overflow-hidden">
